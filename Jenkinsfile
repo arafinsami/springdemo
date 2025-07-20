@@ -37,6 +37,22 @@ pipeline {
                     url: 'https://github.com/arafinsami/springdemo.git'
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    dir("${MODULE_PATH}") {
+                        sh """
+                            ${SCANNER_HOME}/bin/sonar-scanner \\
+                            -Dsonar.projectKey=game-fish-external \\
+                            -Dsonar.projectName=game-fish-external \\
+                            -Dsonar.sources=src \\
+                            -Dsonar.java.binaries=target
+                        """
+                    }
+                }
+            }
+        }
     }
 
     post {
