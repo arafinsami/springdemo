@@ -8,7 +8,7 @@ pipeline {
     environment {
         MODULE_PATH = "springdemo"
         ECR_REPO = "418295709911.dkr.ecr.us-east-1.amazonaws.com/springdemo"
-        SCANNER_HOME = tool 'sonar-scanner'
+        SCANNER_HOME = tool 'sonar'
         MAVEN_HOME = tool 'Maven 3'
     }
 
