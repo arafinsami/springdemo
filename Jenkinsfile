@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Print Build Info') {
             steps {
-                sh 'echo "Branch: ${GIT_BRANCH}, Tag: ${GIT_TAG}"'
+                sh 'echo "Branch: ${GIT_BRANCH}"'
                 sh 'env'
             }
         }
