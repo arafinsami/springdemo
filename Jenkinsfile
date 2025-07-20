@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'GIT_BRANCH', defaultValue: 'develop', description: 'Git branch to checkout')
-        string(name: 'GIT_TAG', defaultValue: '1.0', description: 'Docker image tag')
+        string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Git branch to checkout')
     }
 
     environment {
@@ -35,7 +34,7 @@ pipeline {
             steps {
                 git branch: "${params.GIT_BRANCH}",
                     credentialsId: 'gitlab-cred',
-                    url: 'http://18.179.133.228/sun_game/game-fish.git'
+                    url: 'https://github.com/arafinsami/springdemo.git'
             }
         }
     }
