@@ -40,13 +40,12 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir("${MODULE_PATH}") {
-                    sh """
-                        ${MAVEN_HOME}/bin/mvn clean package -DskipTests
-                    """
-                }
+                sh """
+                    ${MAVEN_HOME}/bin/mvn clean package -DskipTests
+                """
             }
         }
+
 
         stage('SonarQube Analysis') {
             steps {
