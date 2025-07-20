@@ -44,3 +44,4 @@ pipeline {
             archiveArtifacts artifacts: '**/*.html', allowEmptyArchive: true
         }
     }
+}
