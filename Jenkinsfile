@@ -41,18 +41,17 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    dir("${MODULE_PATH}") {
-                        sh """
-                            ${SCANNER_HOME}/bin/sonar-scanner \\
-                            -Dsonar.projectKey=springdemo \\
-                            -Dsonar.projectName=springdemo \\
-                            -Dsonar.sources=src \\
-                            -Dsonar.java.binaries=target
-                        """
-                    }
+                    sh """
+                        ${SCANNER_HOME}/bin/sonar-scanner \\
+                        -Dsonar.projectKey=springdemo \\
+                        -Dsonar.projectName=springdemo \\
+                        -Dsonar.sources=src/main/java \\
+                        -Dsonar.java.binaries=target
+                    """
                 }
             }
         }
+
     }
 
     post {
