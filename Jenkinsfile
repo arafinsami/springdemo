@@ -44,8 +44,8 @@ pipeline {
                     dir("${MODULE_PATH}") {
                         sh """
                             ${SCANNER_HOME}/bin/sonar-scanner \\
-                            -Dsonar.projectKey=game-fish-external \\
-                            -Dsonar.projectName=game-fish-external \\
+                            -Dsonar.projectKey=springdemo \\
+                            -Dsonar.projectName=springdemo \\
                             -Dsonar.sources=src \\
                             -Dsonar.java.binaries=target
                         """
